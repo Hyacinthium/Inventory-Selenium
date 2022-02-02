@@ -50,3 +50,55 @@ Add not unique
     Page Should Contain    Username already exists
     
     [Teardown]    Close Browser
+
+Add empty field
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
+    Input Password    xpath://*[@id="login-page"]/div/input[2]    password
+    Submit Credentials
+    Page Should Contain    Accounts
+    # already logged in / add account
+    Click Button    xpath://*[@id="users-page"]/div/div[1]/button
+    # add 
+    Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    # close
+    Page Should Contain    Username cannot be empty
+    [Teardown]    Close Browser
+
+Add username with less than 6 characters
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
+    Input Password    xpath://*[@id="login-page"]/div/input[2]    password
+    Submit Credentials
+    Page Should Contain    Accounts
+    # already logged in / add account
+    Click Button    xpath://*[@id="users-page"]/div/div[1]/button
+    #username
+    Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input    test
+    # add 
+    Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    # close
+    Page Should Contain    Username has to be atleast 6 characters
+    [Teardown]    Close Browser
+
+Add username with greater than 30 characters
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
+    Input Password    xpath://*[@id="login-page"]/div/input[2]    password
+    Submit Credentials
+    Page Should Contain    Accounts
+    # already logged in / add account
+    Click Button    xpath://*[@id="users-page"]/div/div[1]/button
+    #username
+    Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input    1234567890123456789012345678901
+    # add 
+    Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    # close
+    Page Should Contain    Username has to be atmost 30 characters
+    [Teardown]    Close Browser

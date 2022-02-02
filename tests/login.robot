@@ -36,3 +36,20 @@ Wrong Password
     Submit Credentials
     Page Should Contain    Invalid username or password
     [Teardown]    Close Browser
+
+Empty Fields
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Submit Credentials
+    Page Should Contain    Username is empty
+    [Teardown]    Close Browser
+
+Empty Password
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   user123
+    Submit Credentials
+    Page Should Contain    Password is empty
+    [Teardown]    Close Browser
