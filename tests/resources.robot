@@ -12,7 +12,7 @@ ${DELAY}              1
 ${VALID USER}         leana_user
 ${ADMIN USER}         leana_admin
 ${VALID PASSWORD}     password
-${LOGIN URL}          https://office-supplies-inventory-app.herokuapp.com/
+${LOGIN URL}          http://localhost:3000/   #https://office-supplies-inventory-app.herokuapp.com/  
 #${HOME URL}           https://${SERVER}/inventory.html
 #${INVALID PASSWORD}   123456
 
