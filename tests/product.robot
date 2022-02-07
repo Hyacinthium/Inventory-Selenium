@@ -19,7 +19,7 @@ Add product
     #go to inventory page
     Click Element   xpath://*[@id="navbar"]/div[2]/a[2]
     #clicks add button
-    Click Button    xpath://*[@id="admin-inventory"]/div/div[1]/button
+    Click Button    xpath://*[@id="admin-inventory"]/div/div[1]/button[2]
     Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[1]  Selenium_prod
     #erases the leading 1
     Clear Element Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[2]/input  
@@ -43,7 +43,7 @@ Delete Product
     #Should be logged in already
     #go to inventory page
     Click Element   xpath://*[@id="navbar"]/div[2]/a[2]
-    Click Button    xpath://*[@id="admin-inventory"]/table/tbody/tr[9]/td[7]/button[2]
+    Click Button    xpath://*[@id="admin-inventory"]/table/tbody/tr[10]/td[7]/button[2]
     Click Button    css=.ant-modal-confirm-btns > .ant-btn-primary
     Page Should Not Contain    Selenium_prod
     [Teardown]    Close Browser

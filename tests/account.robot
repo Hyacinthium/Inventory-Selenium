@@ -82,7 +82,7 @@ Add username with less than 6 characters
     # add 
     Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
     # close
-    Page Should Contain    Username has to be atleast 6 characters
+    Page Should Contain    Username has to be at least 6 characters
     [Teardown]    Close Browser
 
 Add username with greater than 30 characters
