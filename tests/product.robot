@@ -22,7 +22,7 @@ Add product
     Click Button    xpath://*[@id="admin-inventory"]/div/div[1]/button[2]
     Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[1]  Selenium_prod
     #erases the leading 1
-    Clear Element Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[2]/input  
+    Clear Element Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[2]/input
     Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[1]/div/div[2]/input    20
     #erases the leading 1
     Clear Element Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/div[2]/input
@@ -30,6 +30,7 @@ Add product
     Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[2]   Selenium_prod
     Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[3]   Quezon city   
     Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    Click Button    css=.ant-modal-confirm-btns > .ant-btn-primary 
     Page Should Contain    Selenium_prod
     [Teardown]    Close Browser
 Delete Product
