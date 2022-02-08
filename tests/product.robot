@@ -34,8 +34,6 @@ Add product
     Page Should Contain    Selenium_prod
     [Teardown]    Close Browser
 Delete Product
-    Open Browser    ${LOGIN URL}    ${BROWSER}
-    Maximize Browser Window
     Set Selenium Speed    1
     Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
     Input Password    xpath://*[@id="login-page"]/div/input[2]    password
@@ -49,6 +47,55 @@ Delete Product
     Page Should Not Contain    Selenium_prod
     [Teardown]    Close Browser
 
+Empty product name
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
+    Input Password    xpath://*[@id="login-page"]/div/input[2]    password
+    Submit Credentials
+    Page Should Contain    Accounts
+    #Should be logged in already
+    #go to inventory page
+    Click Element   xpath://*[@id="navbar"]/div[2]/a[2]
+    #clicks add button
+    Click Button    xpath://*[@id="admin-inventory"]/div/div[1]/button[2]
+    Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    Page Should Contain    Product Name cannot be empty
+    [Teardown]    Close Browser
 
-
-
+Empty Supplier
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
+    Input Password    xpath://*[@id="login-page"]/div/input[2]    password
+    Submit Credentials
+    Page Should Contain    Accounts
+    #Should be logged in already
+    #go to inventory page
+    Click Element   xpath://*[@id="navbar"]/div[2]/a[2]
+    #clicks add button
+    Click Button    xpath://*[@id="admin-inventory"]/div/div[1]/button[2]
+    Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[1]  Selenium_prod
+    Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    Page Should Contain    Supplier cannot empty
+    [Teardown]    Close Browser
+Empty location
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    1
+    Input Text    xpath://*[@id="login-page"]/div/input[1]   admin123
+    Input Password    xpath://*[@id="login-page"]/div/input[2]    password
+    Submit Credentials
+    Page Should Contain    Accounts
+    #Should be logged in already
+    #go to inventory page
+    Click Element   xpath://*[@id="navbar"]/div[2]/a[2]
+    #clicks add button
+    Click Button    xpath://*[@id="admin-inventory"]/div/div[1]/button[2]
+    Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[1]  Selenium_prod
+    Input Text    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[2]/input[2]   Selenium_prod
+    Click Button    xpath=/html/body/div[2]/div/div[2]/div/div[2]/div[3]/button[2]
+    Page Should Contain    Stock Location cannot be empty
+    [Teardown]    Close Browser
