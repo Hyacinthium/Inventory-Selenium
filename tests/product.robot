@@ -43,7 +43,7 @@ Delete Product
     #Should be logged in already
     #go to inventory page
     Click Element   xpath://*[@id="navbar"]/div[2]/a[2]
-    Click Button    xpath://*[@id="admin-inventory"]/table/tbody/tr[10]/td[7]/button[2]
+    Click Button    xpath://*[@id="admin-inventory"]/table/tbody/tr[9]/td[7]/button[2]
     Click Button    css=.ant-modal-confirm-btns > .ant-btn-primary
     Page Should Not Contain    Selenium_prod
     [Teardown]    Close Browser
